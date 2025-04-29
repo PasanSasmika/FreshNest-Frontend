@@ -6,12 +6,14 @@ import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignUp"
 import ServiceCard from "./pages/HomePages/Service"
 import AdminHome from "./pages/AdminPages/AdminHome"
+import { Toaster } from "react-hot-toast"
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
+    <Toaster/>
      <Routes path="/*">
      
      <Route path='/' element={<CustomerHome/>}/>
