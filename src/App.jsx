@@ -1,16 +1,22 @@
-import Footer from './components/Footer'
-import AboutUs from './pages/HomePages/AboutUs'
-import Home from './pages/HomePages/Home'
-import OurServices from './pages/HomePages/OurService'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import CustomerHome from "./pages/HomePages/CustomerHome"
+import AboutUs from "./pages/HomePages/AboutUs"
+import OurServices from "./pages/HomePages/OurService"
 
 function App() {
 
   return (
     <>
-     <Home/>
-     <OurServices/>
-     <AboutUs/>
-     <Footer/>
+    <BrowserRouter>
+     <Routes path="/*">
+     
+     <Route path='/' element={<CustomerHome/>}/>
+     <Route path="/about" element={<AboutUs />} />
+     <Route path="/service" element={<OurServices />} />
+     <Route path="/contact" element={<OurServices />} />
+
+     </Routes>
+     </BrowserRouter>
     </>
   )
 }
