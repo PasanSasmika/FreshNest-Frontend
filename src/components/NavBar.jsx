@@ -38,7 +38,7 @@ const NavBar = () => {
           >
             <FaBroom className="h-6 w-6 text-blue-600" />
             <span className="text-xl font-main font-bold text-gray-900">
-              CleanNest
+              FreshNest
             </span>
           </motion.div>
 
