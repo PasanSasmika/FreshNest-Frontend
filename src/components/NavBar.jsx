@@ -97,7 +97,7 @@ const NavBar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <motion.button
+          <Link to="/bookservice"><motion.button
               className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-main font-medium transition-all duration-300"
               whileHover={{
                 scale: 1.05,
@@ -106,7 +106,7 @@ const NavBar = () => {
             >
               <FiCalendar className="mr-2" />
               Book a Service
-            </motion.button>
+            </motion.button></Link>
 
            <Link to="/login"><motion.button
               className="p-2 rounded-full text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
@@ -211,14 +211,14 @@ const NavBar = () => {
             </motion.a></Link>
 
             <div className="pt-2 border-t border-gray-200 mt-2 space-y-2">
-              <motion.button
+             <Link to="/bookservice"> <motion.button
                 className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-main font-medium text-white bg-blue-600 hover:bg-blue-700"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <FiCalendar className="mr-2" />
                 Book a Service
-              </motion.button>
+              </motion.button></Link>
               <Link to="/login"><motion.button
                 className="w-full flex items-center justify-center px-4 py-3 rounded-md text-base font-main font-medium text-blue-600 hover:bg-blue-50"
                 whileHover={{ scale: 1.02 }}
