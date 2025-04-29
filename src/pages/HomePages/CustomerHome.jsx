@@ -5,6 +5,7 @@ import Home from "./Home";
 import OurServices from "./OurService";
 import AboutUs from "./AboutUs";
 import Footer from "../../components/Footer";
+import ServiceCard from "./Service";
 
 
 
@@ -28,7 +29,6 @@ function CustomerHome() {
                </main>
              }
            />
-           
          </Routes>
        </div>
      </div>
