@@ -108,14 +108,19 @@ const NavBar = () => {
               Book a Service
             </motion.button>
 
-            <motion.button
+           <Link to="/login"><motion.button
               className="p-2 rounded-full text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <FiUser className="h-5 w-5" />
-            </motion.button>
+            </motion.button></Link> 
           </div>
+
+
+
+
+
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -214,14 +219,14 @@ const NavBar = () => {
                 <FiCalendar className="mr-2" />
                 Book a Service
               </motion.button>
-              <motion.button
+              <Link to="/login"><motion.button
                 className="w-full flex items-center justify-center px-4 py-3 rounded-md text-base font-main font-medium text-blue-600 hover:bg-blue-50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <FiUser className="mr-2" />
                 Login
-              </motion.button>
+              </motion.button></Link>
             </div>
           </div>
         </motion.div>
