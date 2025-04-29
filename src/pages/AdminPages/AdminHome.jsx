@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AdminService from './AdminService';
+import AdminUsers from './AdminUsers';
 
 function AdminHome() {
   const [selectedView, setSelectedView] = useState('dashboard');
@@ -9,7 +10,7 @@ function AdminHome() {
       case 'dashboard':
         return <div className="p-6 font-secondary"><AdminService/></div>;
       case 'users':
-        return <div className="p-6 font-secondary">Users Management Content</div>;
+        return <div className="p-6 font-secondary"><AdminUsers/></div>;
       case 'settings':
         return <div className="p-6 font-secondary">Settings Content</div>;
       default:
