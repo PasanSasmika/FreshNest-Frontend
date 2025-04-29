@@ -30,7 +30,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Experience the <span className="font-semibold text-blue-600">CleanNest difference</span>—where your comfort, health, and peace of mind come first in every cleaning service. From meticulous attention to detail to eco-friendly products, we ensure a spotless, safe, and welcoming home environment.
+          Experience the <span className="font-semibold text-blue-600">FreshNest difference</span>—where your comfort, health, and peace of mind come first in every cleaning service. From meticulous attention to detail to eco-friendly products, we ensure a spotless, safe, and welcoming home environment.
         </motion.p>
         
         <motion.div 
