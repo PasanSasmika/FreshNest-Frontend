@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  FiUser, 
-  FiMenu, 
-  FiHome, 
-  FiInfo, 
-  FiSettings, 
+import {
+  FiUser,
+  FiMenu,
+  FiHome,
+  FiInfo,
+  FiSettings,
   FiMail,
-  FiCalendar
+  FiCalendar,
 } from "react-icons/fi";
 import { FaBroom } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
-
-  const navLinks = [
-    { name: "Home", icon: <FiHome className="mr-2" />, href: "#" },
-    { name: "About Us", icon: <FiInfo className="mr-2" />, href: "#about" },
-    { name: "Services", icon: <FiSettings className="mr-2" />, href: "#services" },
-    { name: "Contact", icon: <FiMail className="mr-2" />, href: "#contact" },
-  ];
 
   return (
     <motion.nav
@@ -32,7 +26,7 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2 cursor-pointer"
           >
@@ -44,34 +38,76 @@ const NavBar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
-                  activeLink === link.name
-                    ? "text-blue-600 bg-secondary"
-                    : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
-                }`}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => setActiveLink(link.name)}
-              >
-                {link.icon}
-                {link.name}
-              </motion.a>
-            ))}
+            <Link to="/"><motion.a
+              
+              className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
+                activeLink === "Home"
+                  ? "text-blue-600 bg-secondary"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setActiveLink("Home")}
+            >
+              <FiHome className="mr-2" />
+              Home
+            </motion.a></Link>
+
+            <Link to="/about"><motion.a
+             
+              className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
+                activeLink === "About Us"
+                  ? "text-blue-600 bg-secondary"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setActiveLink("About Us")}
+            >
+              <FiInfo className="mr-2" />
+              About Us
+            </motion.a></Link>
+
+           <Link to="/service"><motion.a
+              
+              className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
+                activeLink === "Services"
+                  ? "text-blue-600 bg-secondary"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setActiveLink("Services")}
+            >
+              <FiSettings className="mr-2" />
+              Services
+            </motion.a></Link> 
+
+           <Link to="/contact"><motion.a
+             
+              className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
+                activeLink === "Contact"
+                  ? "text-blue-600 bg-secondary"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setActiveLink("Contact")}
+            >
+              <FiMail className="mr-2" />
+              Contact
+            </motion.a></Link> 
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <motion.button
               className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-main font-medium transition-all duration-300"
-              whileHover={{ scale: 1.05, boxShadow: "0px 5px 15px rgba(37, 99, 235, 0.3)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 5px 15px rgba(37, 99, 235, 0.3)",
+              }}
             >
               <FiCalendar className="mr-2" />
               Book a Service
             </motion.button>
-            
+
             <motion.button
               className="p-2 rounded-full text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
@@ -105,25 +141,70 @@ const NavBar = () => {
           className="md:hidden bg-white shadow-lg rounded-b-lg"
         >
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className={`flex items-center px-3 py-3 rounded-md text-base font-main font-medium ${
-                  activeLink === link.name
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
-                }`}
-                onClick={() => {
-                  setActiveLink(link.name);
-                  setIsMenuOpen(false);
-                }}
-                whileHover={{ x: 5 }}
-              >
-                {link.icon}
-                {link.name}
-              </motion.a>
-            ))}
+           <Link to="/"><motion.a
+              className={`flex items-center px-3 py-3 rounded-md text-base font-main font-medium ${
+                activeLink === "Home"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+              onClick={() => {
+                setActiveLink("Home");
+                setIsMenuOpen(false);
+              }}
+              whileHover={{ x: 5 }}
+            >
+              <FiHome className="mr-2" />
+              Home
+            </motion.a></Link> 
+
+            <Link to="/about"><motion.a
+              className={`flex items-center px-3 py-3 rounded-md text-base font-main font-medium ${
+                activeLink === "About Us"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+              onClick={() => {
+                setActiveLink("About Us");
+                setIsMenuOpen(false);
+              }}
+              whileHover={{ x: 5 }}
+            >
+              <FiInfo className="mr-2" />
+              About Us
+            </motion.a></Link>
+
+            <Link to="/service"><motion.a
+              className={`flex items-center px-3 py-3 rounded-md text-base font-main font-medium ${
+                activeLink === "Services"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+              onClick={() => {
+                setActiveLink("Services");
+                setIsMenuOpen(false);
+              }}
+              whileHover={{ x: 5 }}
+            >
+              <FiSettings className="mr-2" />
+              Services
+            </motion.a></Link>
+
+            <Link to="/contact"><motion.a
+              className={`flex items-center px-3 py-3 rounded-md text-base font-main font-medium ${
+                activeLink === "Contact"
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+              onClick={() => {
+                setActiveLink("Contact");
+                setIsMenuOpen(false);
+              }}
+              whileHover={{ x: 5 }}
+            >
+              <FiMail className="mr-2" />
+              Contact
+            </motion.a></Link>
+
             <div className="pt-2 border-t border-gray-200 mt-2 space-y-2">
               <motion.button
                 className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-main font-medium text-white bg-blue-600 hover:bg-blue-700"
