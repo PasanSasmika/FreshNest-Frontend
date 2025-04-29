@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiLogIn, FiUserPlus, FiLock, FiMail } from 'react-icons/fi';
 import home from '/image.jpg';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 function LoginPage() {
+
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  function userLogin() {
+    axios.post(import.meta.env.VITE_BACKEND_URL + '/api/users/login', {
+      email,
+      password,
+    }).then((res) => {
+      if (res.data.user == null) {
+        toast.error(res.data.message);
+        return;
+      }
+      toast.success('Login success');
+      localStorage.setItem('token', res.data.token);
+      window.location.href = res.data.user.type === 'admin' ? '/admin' : '/';
+    });
+  }
+
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
       {/* Background Image with Overlay */}
@@ -28,7 +50,7 @@ function LoginPage() {
           </div>
 
           {/* Form */}
-          <form className="space-y-6">
+          <div className="space-y-6">
             <div className="group">
               <label className="block text-sm text-white/80 mb-2 ml-1 transition-all duration-300 group-focus-within:text-blue-400">
                 Email Address
@@ -37,6 +59,8 @@ function LoginPage() {
                 <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 group-focus-within:text-blue-400 transition-colors" />
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
                   className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400/50 transition-all"
                   placeholder="your@email.com"
                 />
@@ -51,6 +75,8 @@ function LoginPage() {
                 <FiLock className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 group-focus-within:text-purple-400 transition-colors" />
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e)=>setPassword(e.target.value)}
                   className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-400/50 transition-all"
                   placeholder="••••••••"
                 />
@@ -60,11 +86,12 @@ function LoginPage() {
             <button
               type="submit"
               className="w-full py-4 px-6 bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-blue-500/20 flex items-center justify-center"
+              onClick={userLogin}
             >
               <FiLogIn className="mr-3 text-lg" />
               Sign In
             </button>
-          </form>
+          </div>
 
           {/* Divider */}
           <div className="relative my-8">
