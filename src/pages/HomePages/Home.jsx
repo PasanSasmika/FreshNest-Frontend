@@ -1,12 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import home from "/image.jpg";
-import NavBar from "../../components/NavBar";
 
 function Home() {
   return (
     <>
-    <NavBar/>
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col md:flex-row items-center justify-center px-8 py-12 md:p-12 lg:p-20">
       {/* Content */}
       <motion.div 
