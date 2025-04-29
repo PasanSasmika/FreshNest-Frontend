@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="w-full bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100"
+      className="w-full h-20 bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -48,10 +48,10 @@ const NavBar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className={`flex items-center px-4 py-2 rounded-lg text-sm font-main font-medium transition-all duration-300 ${
+                className={`flex items-center px-4 py-2 rounded-lg text-md font-primary font-semibold transition-all duration-300 ${
                   activeLink === link.name
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-500 hover:text-blue-600 hover:bg-blue-50"
+                    ? "text-blue-600 bg-secondary"
+                    : "text-gray-600 hover:text-blue-600 hover:bg-yellow-50"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setActiveLink(link.name)}
