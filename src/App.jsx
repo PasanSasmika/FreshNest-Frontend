@@ -5,6 +5,7 @@ import OurServices from "./pages/HomePages/OurService"
 import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignUp"
 import ServiceCard from "./pages/HomePages/Service"
+import AdminHome from "./pages/AdminPages/AdminHome"
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
      <Route path="/login" element={<LoginPage />} />
      <Route path="/signup" element={<SignupPage />} />
      <Route path="/bookservice" element={<ServiceCard />} />
-    
+     <Route path='/admin/*' element={<AdminHome/>}/>
+
      </Routes>
      </BrowserRouter>
     </>
