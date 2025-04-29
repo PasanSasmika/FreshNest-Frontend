@@ -4,6 +4,7 @@ import AboutUs from "./pages/HomePages/AboutUs"
 import OurServices from "./pages/HomePages/OurService"
 import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignUp"
+import ServiceCard from "./pages/HomePages/Service"
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
      <Route path="/contact" element={<OurServices />} />
      <Route path="/login" element={<LoginPage />} />
      <Route path="/signup" element={<SignupPage />} />
-
+     <Route path="/bookservice" element={<ServiceCard />} />
+    
      </Routes>
      </BrowserRouter>
     </>
