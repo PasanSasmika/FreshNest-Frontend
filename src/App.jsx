@@ -9,6 +9,8 @@ import AdminHome from "./pages/AdminPages/AdminHome"
 import { Toaster } from "react-hot-toast"
 import ConfirmBook from "./pages/HomePages/ConfirmBook"
 import Profile from "./pages/HomePages/Profile"
+import NavBar from "./components/NavBar"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
      <Route path='/admin/*' element={<AdminHome/>}/>
 
      </Routes>
+
      </BrowserRouter>
     </>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import home from '/image.jpg';
+import home from '/image2.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
