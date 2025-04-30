@@ -2,8 +2,7 @@
 
 A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and an intuitive admin panel.
 
-🔗 Live Demo: https://fresh-nest-frontend.vercel.app
-
+🔗 Live Demo:`(https://fresh-nest-frontend.vercel.app/)`
 ⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
 ✨ Features
@@ -32,7 +31,7 @@ Database: MongoDB
 🚀 Getting Started (Local Setup)
 
 # 1. Clone the repository
-git clone https://github.com/PasanSasmika/FreshNest-Frontend.git
+`git clone https://github.com/PasanSasmika/FreshNest-Frontend.git`
 cd FreshNest-Frontend
 
 # 2. Install dependencies
