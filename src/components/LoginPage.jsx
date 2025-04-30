@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { FiLogIn, FiUserPlus, FiLock, FiMail } from 'react-icons/fi';
-import home from '/image.jpg';
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import axios from 'axios';
+import toast from 'react-hot-toast';
+import {  FiMail, FiLock } from 'react-icons/fi';
+import home from '/image.jpg';
+import { useNavigate } from 'react-router-dom';
 
-function LoginPage() {
-
+function Login() {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   function userLogin() {
     axios.post(import.meta.env.VITE_BACKEND_URL + '/api/users/login', {
@@ -23,103 +24,76 @@ function LoginPage() {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userId', res.data.user._id);
       window.location.href = res.data.user.type === 'admin' ? '/admin' : '/';
+    })
+    .catch((error) => {
+      console.log(error)
+      toast.error(error.response?.data?.message || "Login failed")
     });
   }
 
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
-      {/* Background Image with Overlay */}
-      <div className="fixed inset-0 overflow-hidden">
-        <img
-          src={home}
-          alt="Background"
-          className="w-full h-full object-cover transform scale-105"
-        />
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-      </div>
-
-      {/* Login Card */}
-      <div className="relative w-full max-w-md bg-white/5 backdrop-blur-2xl rounded-2xl shadow-xl overflow-hidden border border-white/10 z-10 transition-all duration-300 hover:shadow-2xl hover:border-white/20">
-        <div className="p-8">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent mb-2 animate-fade-in">
-              Welcome Back
-            </h2>
-            <p className="text-white/80 text-sm">Please sign in to continue</p>
-          </div>
-
-          {/* Form */}
-          <div className="space-y-6">
-            <div className="group">
-              <label className="block text-sm text-white/80 mb-2 ml-1 transition-all duration-300 group-focus-within:text-blue-400">
-                Email Address
-              </label>
-              <div className="relative">
-                <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 group-focus-within:text-blue-400 transition-colors" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e)=>setEmail(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400/50 transition-all"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-
-            <div className="group">
-              <label className="block text-sm text-white/80 mb-2 ml-1 transition-all duration-300 group-focus-within:text-purple-400">
-                Password
-              </label>
-              <div className="relative">
-                <FiLock className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 group-focus-within:text-purple-400 transition-colors" />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e)=>setPassword(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-400/50 transition-all"
-                  placeholder="••••••••"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-4 px-6 bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-blue-500/20 flex items-center justify-center"
-              onClick={userLogin}
-            >
-              <FiLogIn className="mr-3 text-lg" />
-              Sign In
-            </button>
-          </div>
-
-          {/* Divider */}
-          <div className="relative my-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="px-4 bg-transparent text-sm text-white/60">
-                New to our platform?
-              </span>
-            </div>
-          </div>
-
-          {/* Sign Up Button */}
-          <Link to="/signup"><a
-            className="w-full py-3.5 px-6 border border-white/20 hover:border-white/30 bg-white/5 hover:bg-white/10 rounded-xl text-white/90 font-medium transition-all duration-300 flex items-center justify-center group"
-          >
-            <FiUserPlus className="mr-3 text-lg transition-transform group-hover:translate-x-1" />
-            Create Free Account
-          </a></Link>
+    <div className="relative flex items-center justify-center min-h-screen px-4 bg-gray-100">
+      <img 
+        src={home}
+        alt="Background" 
+        className="absolute inset-0 w-full h-full object-cover z-0" 
+      />
+      
+      <div className="backdrop-blur-lg bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md border border-white/20">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-gray-800 mb-2">Welcome Back</h2>
+          <p className="text-gray-600 font-medium">Sign in to continue your journey</p>
         </div>
 
-        {/* Glow Effect */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl opacity-30 animate-glow"></div>
+        <div className="space-y-5">
+          <div className="relative">
+            <FiMail className="absolute top-3 left-3 text-gray-400" />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full pl-9 pr-4 py-3 bg-white/90 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            />
+          </div>
+
+          <div className="relative">
+            <FiLock className="absolute top-3 left-3 text-gray-400" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full pl-9 pr-4 py-3 bg-white/90 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            />
+          </div>
+
+          <button
+            onClick={userLogin}
+            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3.5 rounded-lg font-semibold hover:shadow-lg hover:scale-[1.01] transition-transform duration-200 flex items-center justify-center"
+          >
+            Login
+          </button>
+
+          <p className="text-center text-gray-600 mt-6">
+            Don't have an account?{' '}
+            <Link 
+              to="/signup" 
+              className="text-blue-600 hover:text-blue-700 font-semibold underline underline-offset-2"
+            >
+              Sign Up
+            </Link>
+          </p>
+
+          <div className="relative mt-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default Login;
