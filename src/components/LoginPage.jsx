@@ -19,8 +19,9 @@ function LoginPage() {
         toast.error(res.data.message);
         return;
       }
-      toast.success('Login success');
+      toast.success("Login success");
       localStorage.setItem('token', res.data.token);
+      localStorage.setItem('userId', res.data.user._id);
       window.location.href = res.data.user.type === 'admin' ? '/admin' : '/';
     });
   }
