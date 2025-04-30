@@ -1,7 +1,7 @@
 🧼 FreshNest – Cleaning Service Management System
-A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and intuitive admin panel.
+A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and an intuitive admin panel.
 
-🔗 Live Demo: fresh-nest-frontend.vercel.app
+🔗 Live Demo: https://fresh-nest-frontend.vercel.app
 ⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
 ✨ Features
@@ -18,29 +18,24 @@ View all customer bookings.
 Add, edit, or delete cleaning service types.
 
 📦 Tech Stack
-Frontend: React.js + Tailwind CSS + Framer motion
+Frontend: React.js + Tailwind CSS + Framer Motion
 
 Backend: Node.js + Express (hosted on Render)
 
 Database: MongoDB
 
 🚀 Getting Started (Local Setup)
-1. Clone the repository
-bash
-Copy
-Edit
+
+# 1. Clone the repository
 git clone https://github.com/PasanSasmika/FreshNest-Frontend.git
 cd FreshNest-Frontend
-2. Install dependencies
 
-
+# 2. Install dependencies
 npm install
-3. Start the development server
 
-
+# 3. Start the development server
 npm run dev
-App will be available at http://localhost:5173/.
-
+App will be available at: http://localhost:5173
 
 ✅ Validations
 All form fields are required.
@@ -48,13 +43,10 @@ All form fields are required.
 Validations are handled on the frontend.
 
 🔐 Admin Access
-You can access the admin panel via the hosted site using:
-
+You can access the admin panel using:
 Email: admin@gmail.com
-
 Password: 456
 
 👨‍💻 Author
-Developed by Pasan Sasmika
-GitHub: github.com/PasanSasmika
-
+Developed by: Pasan Sasmika
+GitHub: https://github.com/PasanSasmika
