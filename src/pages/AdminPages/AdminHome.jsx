@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import AdminService from './AdminService';
 import AdminUsers from './AdminUsers';
+import AdminBookings from './AdminBookings';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 function AdminHome() {
   const [selectedView, setSelectedView] = useState('dashboard');
+  const navigate = useNavigate()
 
   const renderContent = () => {
     switch (selectedView) {
@@ -12,10 +16,18 @@ function AdminHome() {
       case 'users':
         return <div className="p-6 font-secondary"><AdminUsers/></div>;
       case 'settings':
-        return <div className="p-6 font-secondary">Settings Content</div>;
+        return <div className="p-6 font-secondary"><AdminBookings/></div>;
       default:
         return <div className="p-6 font-secondary">Select a view</div>;
     }
+  };
+
+  
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    toast.success("Log Out successfully")
+    navigate("/");
   };
 
   return (
@@ -61,7 +73,7 @@ function AdminHome() {
                     : 'text-gray-500 hover:text-gray-700 font-secondary'
                 }`}
               >
-                Settings
+                Bookings
               </button>
             </div>
 
@@ -83,7 +95,8 @@ function AdminHome() {
                   />
                 </svg>
               </button>
-              <button className="font-secondary text-gray-600 hover:text-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              <button className="font-secondary text-gray-600 hover:text-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              onClick={handleLogout}>
                 Logout
               </button>
             </div>
