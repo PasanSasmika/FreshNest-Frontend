@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLeaf, FaHome, FaUserTie, FaClipboardList } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
   const services = [
@@ -77,9 +78,9 @@ const OurServices = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-main font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-200">
+          <Link to="/bookservice"><button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-main font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-200">
             Book a Service Now
-          </button>
+          </button></Link>
         </motion.div>
       </div>
     </div>
