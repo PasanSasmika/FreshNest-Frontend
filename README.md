@@ -1,12 +1,60 @@
-# React + Vite
+🧼 FreshNest – Cleaning Service Management System
+A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and intuitive admin panel.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Demo: fresh-nest-frontend.vercel.app
+⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
-Currently, two official plugins are available:
+✨ Features
+👤 User Functionality
+Book a Cleaning Service
+Includes: Customer Name, Address, Date & Time, and Service Type.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Manage Bookings
+View, update, or cancel your existing bookings.
 
-## Expanding the ESLint configuration
+🛠️ Admin Panel
+View all customer bookings.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Add, edit, or delete cleaning service types.
+
+📦 Tech Stack
+Frontend: React.js + Tailwind CSS + Framer motion
+
+Backend: Node.js + Express (hosted on Render)
+
+Database: MongoDB
+
+🚀 Getting Started (Local Setup)
+1. Clone the repository
+bash
+Copy
+Edit
+git clone https://github.com/PasanSasmika/FreshNest-Frontend.git
+cd FreshNest-Frontend
+2. Install dependencies
+
+
+npm install
+3. Start the development server
+
+
+npm run dev
+App will be available at http://localhost:5173/.
+
+
+✅ Validations
+All form fields are required.
+
+Validations are handled on the frontend.
+
+🔐 Admin Access
+You can access the admin panel via the hosted site using:
+
+Email: admin@gmail.com
+
+Password: 456
+
+👨‍💻 Author
+Developed by Pasan Sasmika
+GitHub: github.com/PasanSasmika
+
