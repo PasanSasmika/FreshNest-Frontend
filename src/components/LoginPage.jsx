@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import {  FiMail, FiLock } from 'react-icons/fi';
-import home from '/image.jpg';
+import home from '/image2.jpg';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
