@@ -22,6 +22,7 @@ View all customer bookings.
 Add, edit, or delete cleaning service types.
 
 📦 Tech Stack
+
 Frontend: React.js + Tailwind CSS + Framer Motion
 
 Backend: Node.js + Express (hosted on Render)
