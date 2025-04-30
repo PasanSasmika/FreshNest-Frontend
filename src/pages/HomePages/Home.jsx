@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import home from "/image.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -40,9 +41,9 @@ function Home() {
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-200">
             Contact Us
           </button>
-          <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-medium transition duration-300 transform hover:scale-105">
+         <Link to="/bookservice"><button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-medium transition duration-300 transform hover:scale-105">
             Our Services
-          </button>
+          </button></Link> 
         </motion.div>
         
         <motion.div 

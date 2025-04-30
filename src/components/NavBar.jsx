@@ -13,6 +13,7 @@ import {
 import { FaBroom } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BsHouseFill } from "react-icons/bs";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,16 +47,15 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
+          <div
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => navigate("/")}
           >
-            <FaBroom className="h-6 w-6 text-blue-600" />
-            <span className="text-xl font-main font-bold text-gray-900">
+            <BsHouseFill className="h-6 w-6 text-blue-600" />
+            <span className="text-xl mt-1 font-main font-primary font-bold text-gray-900">
               FreshNest
             </span>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.13.4",
+    "@lottiefiles/lottie-player": "^2.0.12",
+    "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",

@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCheck, FaLeaf, FaTshirt, FaClock, FaFlask } from "react-icons/fa";
-import home from "/image.jpg";
+import home from "/image3.jpg";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const features = [
@@ -55,14 +56,13 @@ const AboutUs = () => {
               ))}
             </ul>
             
-            <motion.a
-              href="#about"
+            <Link to="/bookservice"> <motion.a
               whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-secondary font-semibold text-lg transition-all duration-300 shadow-lg"
             >
               Need Quality Service ?
-            </motion.a>
+            </motion.a></Link>
           </motion.div>
 
           {/* Right Column - Image */}
