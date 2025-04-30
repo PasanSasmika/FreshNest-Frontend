@@ -7,7 +7,9 @@ A modern web application for booking and managing cleaning services, built using
 ⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
 ✨ Features
+
 👤 User Functionality
+
 Book a Cleaning Service
 Includes: Customer Name, Address, Date & Time, and Service Type.
 
