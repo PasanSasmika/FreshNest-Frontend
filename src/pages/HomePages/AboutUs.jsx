@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCheck, FaLeaf, FaTshirt, FaClock, FaFlask } from "react-icons/fa";
-import home from "/image.jpg";
+import home from "/image3.jpg";
 import { Link } from "react-router-dom";
 
 const AboutUs = () => {
