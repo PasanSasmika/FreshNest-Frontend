@@ -7,6 +7,7 @@ import SignupPage from "./components/SignUp"
 import ServiceCard from "./pages/HomePages/Service"
 import AdminHome from "./pages/AdminPages/AdminHome"
 import { Toaster } from "react-hot-toast"
+import ConfirmBook from "./pages/HomePages/ConfirmBook"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
      <Route path="/login" element={<LoginPage />} />
      <Route path="/signup" element={<SignupPage />} />
      <Route path="/bookservice" element={<ServiceCard />} />
+     <Route path="/confirmbook" element={<ConfirmBook />} />
      <Route path='/admin/*' element={<AdminHome/>}/>
 
      </Routes>
