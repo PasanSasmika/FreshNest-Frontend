@@ -48,10 +48,14 @@ All form fields are required.
 Validations are handled on the frontend.
 
 🔐 Admin Access
+
 You can access the admin panel using:
+
 Email: admin@gmail.com
 Password: 456
 
+
 👨‍💻 Author
+
 Developed by: Pasan Sasmika
 GitHub: https://github.com/PasanSasmika
