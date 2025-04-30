@@ -1,37 +1,45 @@
-🧼 FreshNest – Cleaning Service Management System
+# 🧼 FreshNest – Cleaning Service Management System
 
-A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and an intuitive admin panel.
+A modern web application for booking and managing cleaning services, built using **React.js** and **Tailwind CSS**, featuring a responsive design and an intuitive admin panel.
 
-🔗 Live Demo:```bash https://fresh-nest-frontend.vercel.app/```
-⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
+---
 
-✨ Features
+## 🔗 Live Demo
 
-👤 User Functionality
+[https://fresh-nest-frontend.vercel.app/](https://fresh-nest-frontend.vercel.app/)
 
-Book a Cleaning Service
-Includes: Customer Name, Address, Date & Time, and Service Type.
+> ⚙️ **Note:** Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
-Manage Bookings
-View, update, or cancel your existing bookings.
+---
 
-🛠️ Admin Panel
-View all customer bookings.
+## ✨ Features
 
-Add, edit, or delete cleaning service types.
+### 👤 User Functionality
+- **Book a Cleaning Service**  
+  Includes: Customer Name, Address, Date & Time, and Service Type.
 
-📦 Tech Stack
+- **Manage Bookings**  
+  View, update, or cancel your existing bookings.
 
-Frontend: React.js + Tailwind CSS + Framer Motion
+### 🛠️ Admin Panel
+- View all customer bookings  
+- Add, edit, or delete cleaning service types
 
-Backend: Node.js + Express (hosted on Render)
+---
 
-Database: MongoDB
+## 📦 Tech Stack
 
-🚀 Getting Started (Local Setup)
+- **Frontend:** React.js, Tailwind CSS, Framer Motion  
+- **Backend:** Node.js, Express (hosted on Render)  
+- **Database:** MongoDB
 
+---
+
+## 🚀 Getting Started (Local Setup)
+
+```bash
 # 1. Clone the repository
-`git clone https://github.com/PasanSasmika/FreshNest-Frontend.git`
+git clone https://github.com/PasanSasmika/FreshNest-Frontend.git
 cd FreshNest-Frontend
 
 # 2. Install dependencies
@@ -39,22 +47,22 @@ npm install
 
 # 3. Start the development server
 npm run dev
-App will be available at: http://localhost:5173
+
+# App will be available at:
+http://localhost:5173
 
 ✅ Validations
-All form fields are required.
+All form fields are required
 
-Validations are handled on the frontend.
+Validations are handled on the frontend
 
 🔐 Admin Access
-
-You can access the admin panel using:
+Use the following credentials to access the admin panel:
 
 Email: admin@gmail.com
+
 Password: 456
 
-
 👨‍💻 Author
-
 Developed by: Pasan Sasmika
 GitHub: https://github.com/PasanSasmika
