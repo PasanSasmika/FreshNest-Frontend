@@ -2,7 +2,7 @@
 
 A modern web application for booking and managing cleaning services, built using React.js and Tailwind CSS, featuring a responsive design and an intuitive admin panel.
 
-🔗 Live Demo:```bash(https://fresh-nest-frontend.vercel.app/)```
+🔗 Live Demo:```bash https://fresh-nest-frontend.vercel.app/```
 ⚙️ Note: Backend is hosted on Render. It may take a few seconds to load data due to cold starts.
 
 ✨ Features
