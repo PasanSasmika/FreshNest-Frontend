@@ -24,6 +24,12 @@ A modern web application for booking and managing cleaning services, built using
 ### 🛠️ Admin Panel
 - View all customer bookings  
 - Add, edit, or delete cleaning service types
+-  Admin Access
+Use the following credentials to access the admin panel:
+
+Email: admin@gmail.com
+
+Password: 456
 
 ---
 
